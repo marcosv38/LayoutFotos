@@ -1,31 +1,123 @@
+:root{
+    --bg-body: #18122B;
+    --bg-principal: #393053;
+    --cor-primaria: #443C68;
+    --cor-secundaria: #635985;
+    --cor-bt-base: #FFF;
+}
+
+
 body{
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding-top: 5vh;
 }
 
 .principal{
     background-color: black;
-    width: 80vw;
+    width: 65vw;
     height: 90vh;
     display: grid;
     grid-template-areas: 
-    "menu foto foto foto"
-    "menu foto foto foto"
-    "opcoes opcoes opcoes opcoes"
+    "menu foto"
+    "menu foto"
+    "opcoes opcoes"
     ;
+    grid-template-rows: repeat(2, 40%) 20%;
+    grid-template-columns: 18% 82%;
+
 }
 
+/*------------- Menu Lateral ------------*/
 .layout{
-    background-color: black;
+    background-color: var(--bg-principal);
     grid-area: menu;
-    width: 30%;
+    display: grid;
+    grid-template-areas: 
+    "logo"
+    "botoes"
+    "modelos"
+    ;
+    padding: 1vh;
+    grid-template-rows: 10% 10% 80%;
 }
 
+.layout__Logo{
+    grid-area: logo;
+    display: grid;
+    grid-template-areas:"logo img";
+    grid-template-columns: 10vh 1fr;
+    column-gap: 1vh;
+}
+
+.layout__Logo-img{
+    width: 8vh;
+    height: 8vh;
+    grid-area: logo;
+    text-align: right;
+}
+
+.layout__titulo{
+    font-family: "Nerko One", cursive;
+    color: var(--cor-secundaria);
+    font-size: 4vh;
+    grid-area: img;
+    align-self: center;
+}
+
+.layout__buttons{
+    grid-area: botoes;
+    display: flex;
+    margin-top: 1vw;
+}
+
+.bt__menu{
+    padding: 1vw;
+    color: var(--cor-bt-base);
+    background-color: var(--cor-secundaria);
+    border: none;
+
+}
+
+.bt__menu-desactive{
+    padding: 1vw;
+    color: var(--cor-secundaria);
+    background-color: var(--bg-body);
+    border: none;
+}
+
+/*áreas de modelos*/
+.layout__modelos{
+    grid-area: modelos;
+    background-color: var(--cor-secundaria);
+    border-radius: 0 30px 30px 30px;
+    
+}
+
+.layout__modelos__container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1vw;
+    gap: 1vw;
+}
+
+.layoutModel{
+    height: 3vw;
+    padding: 1vw 3vw;
+    border-radius: 30px;
+    background-color: var(--bg-principal);
+}
+
+.activeModel{
+    background-color: var(--bg-body);
+    
+}
+
+/*-------------- modelo de imagem ----------------*/
 .container-imagem{
-    background-color: gray;
+    background-color: var(--bg-principal);
     grid-area: foto;
 }
 
