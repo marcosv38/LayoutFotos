@@ -1,0 +1,35 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5vh;
+}
+
+.principal{
+    background-color: black;
+    width: 80vw;
+    height: 90vh;
+    display: grid;
+    grid-template-areas: 
+    "menu foto foto foto"
+    "menu foto foto foto"
+    "opcoes opcoes opcoes opcoes"
+    ;
+}
+
+.layout{
+    background-color: black;
+    grid-area: menu;
+    width: 30%;
+}
+
+.container-imagem{
+    background-color: gray;
+    grid-area: foto;
+}
+
+.container-opcoes{
+    background-color: red;
+    grid-area: opcoes;
+}
