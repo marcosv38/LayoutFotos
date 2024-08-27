@@ -14,6 +14,7 @@ body{
     justify-content: center;
     padding-top: 5vh;
     font-family: var(--font-principal);
+    background: var(--bg-body);
 }
 
 .principal{
@@ -319,7 +320,7 @@ body{
     width: 100%;
     height: 100%;
     row-gap: 1vw;
-    
+    padding-bottom: 2vw;
 }
 
 .container-imagem__upload__itens__sub{
@@ -369,6 +370,8 @@ body{
     border-radius: 10px;
     color: var(--cor-bt-base);
     background-color: var(--bg-body);  
+    border-style: none;
+    
 }
 
 .container-imagem__upload__button{
@@ -390,6 +393,7 @@ body{
 
 /*----------------menu de opções----------*/
 .container-opcoes{
-    background-color: red;
+    background-color: var(--bg-principal);
     grid-area: opcoes;
+    border-top: 3px solid var(--bg-body);
 }
