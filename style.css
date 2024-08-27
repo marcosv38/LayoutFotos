@@ -76,7 +76,7 @@ body{
 }
 
 .bt__menu{
-    padding: 1vw;
+    padding: 0.7vw;
     color: var(--cor-bt-base);
     background-color: var(--cor-secundaria);
     border: none;
@@ -85,7 +85,7 @@ body{
 }
 
 .bt__menu-desactive{
-    padding: 1vw;
+    padding: 0.7vw;
     color: var(--cor-secundaria);
     background-color: var(--bg-body);
     border: none;
@@ -97,7 +97,7 @@ body{
 .layout__modelos{
     grid-area: modelos;
     background-color: var(--cor-secundaria);
-    border-radius: 0 30px 30px 30px;
+    border-radius: 0 20px 20px 20px;
     
 }
 
@@ -131,8 +131,186 @@ body{
 .container-imagem{
     background-color: var(--bg-principal);
     grid-area: foto;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    grid-template-areas: "upload mosaico";
 }
 
+.container-imagem__upload{
+    grid-area: upload;
+    background-color: var(--bg-body);
+
+}
+
+.container-imagem__mosaico{
+    grid-area:mosaico;
+    padding: 1vw;
+}
+
+.imagem__mosaico-bg{
+    background-color: var(--cor-secundaria);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+/* mosaico de duas fotos
+.imagem__mosaico-moldura{
+    display: grid;
+    grid-template-areas: 
+    "imagem1"
+    "imagem2";
+    width: 30%;
+    height: 96%;
+    padding: 2% 0;
+    align-items: center;
+    grid-template-rows: 50% 50%;
+    margin: auto;
+   
+}
+
+.imagem__mosaico1{
+    grid-area: imagem1;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    object-position: 0% 0%;
+    zoom:50%;
+    border-radius: 30px 30px 0 0;
+}
+
+
+.imagem__mosaico2{
+    grid-area: imagem2;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    zoom: unset;
+    border-radius: 0 0 30px 30px;
+    
+}
+
+*/
+
+/* ------ mosaico de 3 fotos ------
+
+.imagem__mosaico-moldura{
+    display: grid;
+    grid-template-areas: 
+    "imagem1 imagem3"
+    "imagem2 imagem3";
+    width: 60%;
+    height: 96%;
+    padding: 2% 0;
+    align-items: center;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+   
+}
+
+.imagem__mosaico1{
+    grid-area: imagem1;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    object-position: 0% 0%;
+    zoom:50%;
+    border-radius: 30px 0 0 0;
+}
+
+
+.imagem__mosaico2{
+    grid-area: imagem2;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    zoom: unset;
+    border-radius: 0 0 0 30px;
+    
+}
+
+.imagem__mosaico3{
+    grid-area: imagem3;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    zoom: 150%;
+    object-position: 80% 0%;
+    border-radius: 0 10px 10px 0;
+    
+}
+
+*/
+
+/* ------ mosaico de 4 fotos -------
+.imagem__mosaico-moldura{
+    display: grid;
+    grid-template-areas: 
+    "imagem1 imagem3"
+    "imagem2 imagem4";
+    width: 60%;
+    height: 96%;
+    padding: 2% 0;
+    align-items: center;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+   
+}
+
+.imagem__mosaico1{
+    grid-area: imagem1;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    object-position: 0% 0%;
+    zoom:50%;
+    border-radius: 30px 0 0 0;
+}
+
+
+.imagem__mosaico2{
+    grid-area: imagem2;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    zoom: unset;
+    border-radius: 0 0 0 30px;
+    
+}
+
+.imagem__mosaico3{
+    grid-area: imagem3;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    zoom: 150%;
+    object-position: 80% 0%;
+    border-radius: 0 10px 0 0;
+    
+}
+
+.imagem__mosaico4{
+    grid-area: imagem4;
+    height: 100%;
+    width: 100%;
+    object-fit: none;
+    zoom: 150%;
+    object-position: 80% 0%;
+    border-radius: 0 0 10px 0;
+    
+}
+
+*/
+
+.imagem__selecionada{
+    border: 3px solid white;
+}
+
+
+
+/*----------------menu de opções*/
 .container-opcoes{
     background-color: red;
     grid-area: opcoes;
