@@ -25,7 +25,7 @@
         <aside class="layout">
             <div class="layout__Logo">
                 <img src="/img/Logo.png" alt="logo do Layout maker" class="layout__Logo-img">
-                <p class="layout__titulo">Layout Maker</p>
+                <h1 class="layout__titulo">Layout Maker</h1>
             </div>
             <div class="layout__buttons">
                 <button class="bt__menu" href="#" id="layout__buttons__vertical">Vertical</button>
@@ -63,7 +63,7 @@
         <section class="container-imagem">
             <div class="container-imagem__upload">
                 <div class="container-imagem__upload__itens">
-                    <span class="container-imagem__upload__itens__sub">Imagens Carregadas:</span> 
+                    <h2 class="container-imagem__upload__itens__sub">Imagens Carregadas:</h2> 
                     <ul class="container-imagem__upload__itens-lista">
                         
                         <li class="container-imagem__upload__itens-item">
@@ -120,7 +120,7 @@
                     <p class="container-imagem__upload__button-text">Carregar Imagem </p><img class="container-imagem__upload-button-icon" src="/img/upIcon.png">
                 </button>
                 <button class="container-imagem__button__apagar bt__Upload">
-                    <p class="container-imagem__button__apagar-text">Apagar Imagens </p><img class="container-imagem__upload-button-icon" src="/img/lixeira.png">
+                    <p class="container-imagem__button__apagar-text">Apagar Tudo </p><img class="container-imagem__upload-button-icon" src="/img/lixeira.png">
                 </button>
             </div>
             <div class="container-imagem__mosaico">
@@ -139,7 +139,32 @@
             <!-- Seção de opções -->
 
         <section class="container-opcoes">
-            
+            <div class="container-opcoes__img">
+
+            </div>
+
+            <!-- Opções de download -->
+
+            <div class="container-opcoes__download">
+                <h2 class="container-opcoes__download__titulo">Download Mosaico</h2>
+                
+                <ul class="container-opcoes__download__extensao">
+                    <h3 class="container-opcoes__download__subtitulo">Extensão:</h3>
+                    <li class="container-opcoes__download__extensao__botao">
+                        <button class="bt__menu__Download container-opcoes__download__extensao__botao-PNG">PNG</button> 
+                    </li>
+                    <li class="container-opcoes__download__extensao__botao">
+                        <button class="bt__menu__Download container-opcoes__download__extensao__botao-Jpeg">Jpeg</button>
+                    </li>
+                    <li class="container-opcoes__download__extensao__botao">
+                        <button class="bt__menu__Download container-opcoes__download__extensao__botao-Webp">Webp</button>
+                    </li>
+                </ul>
+                <div class="container__Export__Download">
+                    <input class="container-opcoes__download__nome-arquivo" type="text" placeholder="Nome do arquivo: default">
+                    <button class="bt__menu__Download container-opcoes__download__botao-download"><img src="/img/iconeDownload.png" class="container-opcoes__download__botao-download__icon"> </button>
+                </div>
+            </div>
         </section>
 
     </main>
