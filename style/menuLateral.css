@@ -96,14 +96,13 @@
 
 .layoutModel {
     height: 3vw;
-    padding: 1vw 3vw;
+    padding: 1vw 2vw;
     border-radius: 20px;
     background-color: var(--bg-principal);
 }
 
 .activeModel {
     background-color: var(--bg-body);
-
 }
 
 .layoutModel:hover {
