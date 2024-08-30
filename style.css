@@ -399,6 +399,7 @@ body{
     display: grid;
     grid-template-areas: "edicao download";
     grid-template-columns: 1fr 30%;
+    padding: 0.2vw;
 }
 
 
@@ -470,4 +471,118 @@ body{
     font-weight: 700;
     font-size: 0.7vw;
     border-radius: 10px;
+}
+
+
+/* Opções de imagem*/
+.container-opcoes__img{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* opções de ajustes */
+
+.container-opcoes__img__posicao-container{
+    display: grid;
+    grid-template-areas: 
+    "tituloAj"
+    "verticalAj"
+    "horizontalAj"
+    "zoomAj"
+    ;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: repeat(4,1.7vw);
+    padding: 0.5vw;
+}
+
+.container-opcoes__img__posicao-ajustes{
+    grid-area: tituloAj;
+    color: var(--cor-bt-base);
+    font-size: 1.2vw;
+}
+
+.container-opcoes__img__posicao-ajustes__container-titulo{
+    color: var(--cor-bt-base);
+    font-size: 0.9vw;
+}
+
+.container-opcoes__img__posicao-ajustes__container-vertical{
+    grid-area: verticalAj;
+}
+
+.container-opcoes__img__posicao-ajustes__container-horizontal{
+    grid-area: horizontalAj;
+}
+
+.container-opcoes__img__posicao-ajustes__container-zoom{
+    grid-area: zoomAj;
+}
+
+/* opções de borda */
+
+.container-opcoes__img__borda-container{
+    display: grid;
+    grid-template-rows: repeat(4,1.2vw);
+    row-gap: 0.5vw;
+    width: 50%;
+    height: 100%;
+    padding: 0.5vw;
+    
+}
+
+.container-opcoes__img__borda__titulo{
+    grid-area: 1/1/2/2;
+    font-size: 1.2vw;
+    color: var(--cor-bt-base);
+}
+
+.container-opcoes__img__borda__espessura-container{
+    grid-area: 2/1/3/2;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0.2vw;
+}
+
+.container-opcoes__img__borda__tipo-container{
+    grid-area: 3/1/4/2;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin: 0.5vw 0;
+}
+
+.container-opcoes__img__borda__tipo-botoes{
+    display: flex;
+    gap: 0.5vw;
+}
+
+.container-opcoes__img__borda-container__cores{
+    grid-area: 4/1/5/2;
+    display: flex;
+    gap: 0.4vw;
+    margin-top: 0.2vw;
+}
+
+.container-opcoes__img__borda__cores{
+    background-color: #FFF;
+    height: 1vw;
+    width: 1vw;
+}
+
+.container-opcoes__img__borda__cores:hover{
+    border: 2px solid red;
+}
+
+.container-opcoes__img__borda__tipo-botao{
+    color: var(--cor-bt-base);
+    font-size: 1vw;
+    font-weight: 400;
+}
+
+.container-opcoes__img__borda__espessura-titulo, .container-opcoes__img__borda__espessura-titulo, .container-opcoes__img__borda__tipo-titulo{
+    color: var(--cor-bt-base);
+    font-size: 0.8vw;
 }
