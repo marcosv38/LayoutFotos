@@ -1,0 +1,33 @@
+.container-imagem{
+    background-color: var(--bg-principal);
+    grid-area: foto;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 71vh;
+    grid-template-areas: "upload mosaico";
+}
+
+
+.container-imagem__mosaico{
+    grid-area:mosaico;
+    padding: 1vw;
+}
+
+.imagem__mosaico-bg{
+    background-color: var(--cor-secundaria);
+    border-radius: 30px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 0.2vh;
+}
+
+
+.imagem__mosaico2:hover, .imagem__mosaico1:hover, .imagem__mosaico3:hover, .imagem__mosaico4:hover, .imagem__mosaico5:hover, .imagem__mosaico6:hover, .imagem__mosaico7:hover, .imagem__mosaico8:hover{
+    opacity: 60%;
+}
+
+/*
+.imagem__mosaico2:active, .imagem__mosaico1:active, .imagem__mosaico3:active, .imagem__mosaico4:active, .imagem__mosaico5:active, .imagem__mosaico6:active, .imagem__mosaico7:active, .imagem__mosaico8:active{
+}*/
