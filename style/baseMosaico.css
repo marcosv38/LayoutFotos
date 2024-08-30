@@ -28,9 +28,10 @@
     opacity: 60%;
 }
 
-/*
+
 .imagem__mosaico2:active, .imagem__mosaico1:active, .imagem__mosaico3:active, .imagem__mosaico4:active, .imagem__mosaico5:active, .imagem__mosaico6:active, .imagem__mosaico7:active, .imagem__mosaico8:active{
-}*/
+    border:3px solid var(--bg-principal);
+}
 
 .imagem__mosaico-base{
     height: 100%;

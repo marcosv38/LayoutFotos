@@ -32,12 +32,14 @@
 .container-imagem__upload__itens-lista{
     display: flex;
     flex-direction: column;
-    height: 85%;
+    height: auto;
+    max-height: 90%;
+    min-height: 10%;
     padding: 0.7vw;
     background-color: var(--bg-body);
     margin-top: 1vw;
     border-radius: 10px;
-    gap: 10px;
+    gap: 1vw;
     overflow-y: scroll;
     scrollbar-color: var(--bg-principal) var(--cor-secundaria);
     scrollbar-width: thin;

@@ -6,7 +6,7 @@ const containerMosaico = document.querySelector("#container__moisaico");
 
 let orientacaoAtual = "v"; //v para vertical e h para horizontal
 let qtdFtsMosaico = "2";
-
+let imagemSelecionada = "";
 
 orientacaoHorizontal.addEventListener('click', (evento) => {
     if (orientacaoAtual === "v") {
@@ -17,7 +17,8 @@ orientacaoHorizontal.addEventListener('click', (evento) => {
         orientacaoAtual = "h";
 
         trocaButoesModelo();
-        atualizaLayoutModel();
+        if(containerMosaico.className!=="")
+            atualizaLayoutModel();
     }
 });
 
@@ -30,7 +31,8 @@ orientacaoVertical.addEventListener('click', (evento) => {
         orientacaoAtual = "v";
 
         trocaButoesModelo();
-        atualizaLayoutModel();
+        if(containerMosaico.className!=="")
+            atualizaLayoutModel();
     }
 });
 
@@ -39,7 +41,8 @@ botoesLayout.forEach(botao => {
     botao.addEventListener('click', (evento) => {
         qtdFtsMosaico = evento.target.id;
         const modeloAtivo = document.querySelector(".activeModel");
-        modeloAtivo.classList.remove("activeModel");
+        if(modeloAtivo!==null)
+            modeloAtivo.classList.remove("activeModel");
         evento.target.classList.add("activeModel");
         atualizaLayoutModel();
 
@@ -47,21 +50,117 @@ botoesLayout.forEach(botao => {
 });
 
 
-function atualizaLayoutModel(){
-    containerMosaico.classList.remove(containerMosaico.className);
+function atualizaLayoutModel() {
+    if(containerMosaico.className!==""){
+        containerMosaico.classList.remove(containerMosaico.className);
+        
+    }
     containerMosaico.classList.add(`imagem__mosaico-moldura${qtdFtsMosaico}${orientacaoAtual}`);
     containerMosaico.innerHTML = "";
 
     for (let i = 0; i < qtdFtsMosaico; i++) {
         containerMosaico.innerHTML += `
-        <img src="/img/imgBase.png" alt="Foto ${i + 1}" class="imagem__mosaico-base imagem__mosaico${i + 1} imagem__mosaico${qtdFtsMosaico}${orientacaoAtual}" />
+        <img src="/img/imgBase.png" alt="Foto ${i + 1}" class="imagem__mosaico-base imagem__mosaico${i + 1} imagem__mosaico${qtdFtsMosaico}${orientacaoAtual}" id="img${i + 1}" />
         `;
     }
+    ativarClickImg();
 }
 
-function trocaButoesModelo(){
+function trocaButoesModelo() {
     for (let i = 0; i < modelosMosaico.length; i++) {
         modelosMosaico[i].setAttribute("src", `img/${orientacaoAtual}M${i + 1}.png`);
     }
 }
+
+
+
+/// -------------------------- Estilos de borda ------------------------------
+const espessuraBordaSlider = document.querySelector(".container-opcoes__img__borda__espessura-slider");
+const raioBordaSlider = document.querySelector(".container-opcoes__img__borda__raio-slider");
+const tipoDeBorda = document.querySelectorAll(".container-opcoes__img__borda__tipo-botao");
+const corSelector = document.querySelector(".container-opcoes__img__borda__cores");
+
+let opcoesBorda = {
+    espessura: 3,
+    raio: 30,
+    tipo: "solid",
+    cor: "#000"
+}
+
+
+espessuraBordaSlider.addEventListener('input', (slider) => {
+    opcoesBorda.espessura = slider.target.value;
+    atualizarBorda();
+});
+
+raioBordaSlider.addEventListener('input', (slider) => {
+    opcoesBorda.raio = slider.target.value;
+    atualizarBorda();
+});
+
+tipoDeBorda.forEach((elemento) => {
+    elemento.addEventListener('click', () => {
+        const botaoAtivo = document.querySelector(".activeModel-Borda");
+        botaoAtivo.classList.remove("activeModel-Borda");
+        elemento.classList.add("activeModel-Borda");
+        opcoesBorda.tipo = elemento.id;
+        atualizarBorda();
+    });
+});
+
+
+corSelector.addEventListener('input', (evento) => {
+    opcoesBorda.cor = evento.target.value;
+    atualizarBorda();
+});
+
+
+function atualizarBorda() {
+    containerMosaico.setAttribute("style", `border: ${opcoesBorda.espessura}px ${opcoesBorda.tipo} ${opcoesBorda.cor}; border-radius:${opcoesBorda.raio}px`)
+}
+
+
+// ------------------- Ajustes de imagens --------------------
+const slidersDeAjuste = document.querySelectorAll(".container-opcoes__img__borda__ajustes-verticais__slider");
+
+let salvarAjustes = [];
+
+let ajustesImg = {
+    posicaoVertical: 50,
+    posicaoHorizontal: 50,
+    zoom: 50
+}
+
+slidersDeAjuste[0].addEventListener('input',(evento)=>{
+    ajustesImg.posicaoVertical = evento.target.value;
+    atualizarPosicionamentoImg();
+});
+
+
+slidersDeAjuste[1].addEventListener('input',(evento)=>{
+    ajustesImg.posicaoHorizontal = evento.target.value;
+    atualizarPosicionamentoImg();
+});
+
+slidersDeAjuste[2].addEventListener('input',(evento)=>{
+    ajustesImg.zoom = evento.target.value;
+    atualizarPosicionamentoImg();
+});
+
+function ativarClickImg() {
+    const imagensMosaico = document.querySelectorAll(".imagem__mosaico-base");
+    imagensMosaico.forEach((imagem) => {
+        imagem.addEventListener('click', (item) => {
+            imagemSelecionada = item.target.id;
+            console.log(imagemSelecionada);
+        });
+    });
+}
+
+function atualizarPosicionamentoImg(){
+    const imgSelecionada = document.getElementById(imagemSelecionada);
+    imgSelecionada.setAttribute("style",`object-position: ${ajustesImg.posicaoHorizontal}% ${ajustesImg.posicaoVertical}%; zoom:${ajustesImg.zoom}%`);
+}
+
+
 
