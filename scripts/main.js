@@ -163,4 +163,60 @@ function atualizarPosicionamentoImg(){
 }
 
 
+// --------------- Carregamento de imagens -----------------------
+const botaoCarregarImagem = document.querySelector('.container-imagem__upload__button');
+const inputUpload = document.getElementById("image-upload");
+const containerNomeImg = document.querySelector(".container-imagem__upload__itens-lista");
+
+let imagensCarregadas = [];
+let imagemCarregadaObj = {
+    src: "",
+    nome: "",
+    tipo:""
+}
+
+
+botaoCarregarImagem.addEventListener("click", () => {
+    inputUpload.click();
+});
+
+
+function lerConteudoDoArquivo(arquivo) {
+    return new Promise((resolve, reject) => {
+        const leitor = new FileReader();
+        leitor.onload = () => {
+            resolve({ url: leitor.result, nome: arquivo.name , tipo: arquivo.type})
+        }
+
+        leitor.onerror = () => {
+            reject(`Erro na leitura do arquivo ${arquivo.name}`)
+        }
+
+        leitor.readAsDataURL(arquivo)
+    })
+}
+
+
+inputUpload.addEventListener("change", async (evento) => {
+    const arquivo = evento.target.files[0];
+    
+    if (arquivo) {
+        try {
+            const conteudoDoArquivo = await lerConteudoDoArquivo(arquivo);
+            imagemCarregadaObj.src = conteudoDoArquivo.url;
+            imagemCarregadaObj.nome = conteudoDoArquivo.nome;
+            imagemCarregadaObj.tipo = conteudoDoArquivo.tipo;
+            imagensCarregadas.push(imagemCarregadaObj);
+            containerNomeImg.innerHTML+=`
+                <li class="container-imagem__upload__itens-item" id="imgList${imagemCarregadaObj.length-1}">
+                    <p class="container-imagem__upload__itens-item__nome">${imagemCarregadaObj.nome}</p>
+                    <img src="img/lixeira.png" alt="icone de apagar imagem"
+                    class="container-imagem__upload-button-icon">
+                </li>
+            `;
+        } catch (erro) {
+            console.error(erro)
+        }
+    }
+})
 

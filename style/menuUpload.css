@@ -75,6 +75,8 @@
 
 .container-imagem__upload__itens-item__nome{
     margin-right: auto;
+    padding-left: 1.2vw;
+    text-align: left;
 }
 
 .bt__Upload{
@@ -112,6 +114,7 @@
 
 
 .container-imagem__upload-button-icon{
-    width: 10%;
-    height: auto;
+    width: 12%;
+    height: 15%;
+    align-self: center;
 }
