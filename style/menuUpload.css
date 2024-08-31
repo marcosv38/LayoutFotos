@@ -69,7 +69,7 @@
 .container-imagem__upload__itens-item-selecionada{
     background-color: var(--bg-principal);
     color: var(--cor-bt-base);
-    border: 3px solid var(--bg-principal);
+    border: 3px solid var(--cor-bt-base);
 }
 
 
@@ -116,5 +116,11 @@
 .container-imagem__upload-button-icon{
     width: 12%;
     height: 15%;
+    align-self: center;
+}
+
+.container-imagem__upload-button-iconb, .container-imagem__apagar-button-icon{
+    width: 10%;
+    height: 40%;
     align-self: center;
 }

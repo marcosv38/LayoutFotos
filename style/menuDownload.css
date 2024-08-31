@@ -76,3 +76,8 @@
     background-color: var(--bg-principal);
     border: 2px solid var(--cor-secundaria);
 }
+
+.bt__menu__Download-Selecionado{
+    background-color: var(--bg-body);
+    border: 2px solid var(--cor-secundaria);
+}
